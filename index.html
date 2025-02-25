@@ -392,6 +392,39 @@
                 .attr("font-size", "16px")
                 .text(`${attributeDictionary[attribute2]}`);
 
+
+            //Legend
+            const legend = svg.append("g")
+            .attr("transform", `translate(${width / 2 - 50}, 20)`)
+
+            legend.append("line")
+                .attr("x1", 0)
+                .attr("y1", 0)
+                .attr("x2", 20)
+                .attr("y2", 0)
+                .attr("stroke", "blue")
+                .attr("stroke-width", 2);
+
+            legend.append("text")
+                .attr("x", 30)
+                .attr("y", 5)
+                .text("Attribute 1")
+                .style("font-size", "12px");
+
+            legend.append("line")
+                .attr("x1", 0)
+                .attr("y1", 20)
+                .attr("x2", 20)
+                .attr("y2", 20)
+                .attr("stroke", "red")
+                .attr("stroke-width", 2);
+
+            legend.append("text")
+                .attr("x", 30)
+                .attr("y", 25)
+                .text("Attribute 2")
+                .style("font-size", "12px");
+
                     }
 
             attributeSelect1.on("change", updateGraph);

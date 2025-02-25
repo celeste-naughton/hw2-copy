@@ -62,46 +62,4 @@ p{
     height: 400px;
     width: 350px;
     margin: 200px 30px 0px 30px;
-    text-align: left;
-    border-radius: 15px;
-}
-
-select{
-    padding: 10px;
-    margin-right: 40px;
-}
-svg{
-    padding: 20px;
-}
-
-img{
-    padding: 10px;
-    margin: 25px;
-}
-.bold{
-    font-weight: bold;
-}
-strong{
-    padding: 0;
-    margin: 0;
-}
-.gridlines{
-    color: black;
-}
-.graph-selection{
-    justify-content: center;
-    margin: 40px 0px 0px 0px;
-}
-.row{
-    display: flex;
-    flex-direction: row;
-    text-align: left;
-}
-.column{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-}
-.action{
-    text-align: center;
-}
+    text-
