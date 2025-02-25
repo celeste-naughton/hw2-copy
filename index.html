@@ -12,11 +12,22 @@
 <body>
     <h1>☆★☆★☆★☆★☆★🏈 Super Bowl Statistics 🏈★☆★☆★☆★☆★☆</h1>
 
+    <div class="row">
+        <p> It's Superbowl Time! With the end of Superbowl LII we wanted to investigate the accessibility and affordability of the Superbowl for the average American.
+            With ticket prices soaring over the past few years and ads costing companies millions of dollars we invite you to explore different 
+        aspects of Superbowl data with the visualizations below. Some notable ones we noticed during our initial exploration 
+        of the dataset are to the right. Graph 1 is (Cost as % of Income vs. Ticket Cost) and Graph 2 is (Ad Cost vs. Ticket Sales)</p>
+
+        <img src="images/graph1.png" width="500" height="300"/>
+        <img src="images/graph2.png" width="500" height="300"/>
+    </div>
+
 
     <div class="sidebar-container"> 
         <!-- Container for graphs -->
         <div class="graph-container">
-            <div>
+            <div class="graph-selection">
+                <p class="action"> Pick an attribute to change the graph!</p>
                 <label for="xAttribute">Select First Attribute</label>
                 <select id="xAttribute">
                     <option value="attendance">Attendance</option>
@@ -152,13 +163,13 @@
                 //gridlines
                 let yAxis = d3.axisLeft(yScale1);   
                 let yGridlines = d3.axisLeft(yScale1)
-                                           .tickSize(-width+100)
+                                           .tickSize(-width)
                                            .tickFormat('');
                                         
                         
                 let xAxis = d3.axisBottom(xScale);
                 let xGridlines = d3.axisBottom(xScale)
-                                        .tickSize(-height-10)
+                                        .tickSize(-height)
                                         .tickSizeOuter(0)
                                         .tickFormat('');
 
@@ -166,26 +177,6 @@
 
 
                 svg.selectAll("*").remove();
-
-                svg.append("g")
-                            .attr("class", "gridlines")
-                            .attr('transform',`translate(${margin.left + 100}, ${margin.top })`)
-                            .call(yGridlines);
-
-                        svg.append("g")
-                            .attr('transform',`translate(${margin.left + 100 }, ${margin.top })`)
-                            .attr("class", "axis")
-                            .call(yAxis);
-
-                        svg.append("g")
-                            .attr("class", "gridlines")
-                            .attr('transform', `translate(${margin.left + 100 }, ${height + 30})`)
-                            .call(xGridlines);
-                        
-                        svg.append("g")
-                            .attr("class", "axis")
-                            .attr('transform', `translate(${margin.left + 100}, ${height + 40})`)
-                            .call(xAxis);
 
 
                 svg.append("g")
@@ -379,7 +370,7 @@
                 .attr("y", height + margin.bottom - 5)
                 .attr("text-anchor", "middle")
                 .attr("font-size", "16px")
-                .text("Superbowl Number");
+                .text("Superbowl Game");
 
             // Y Attribute 1 label
             svg.append("text")
